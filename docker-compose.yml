@@ -53,7 +53,7 @@ services:
     container_name: ngrok
     image: ngrok/ngrok:latest
     environment:
-        NGROK_AUTHTOKEN: 2aQ1bWjFuBkZ9m0Xtgnj0bcvVoJ_3Jvz26156XsFWg2Xw5CsK
+        NGROK_AUTHTOKEN: ${AUTH}
     command: 'http --domain=fresh-cow-rightly.ngrok-free.app list_manager:8080'
     ports:
       - "4040:4040"
