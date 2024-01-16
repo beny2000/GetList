@@ -1,0 +1,61 @@
+version: '3.8'
+services:
+  mongodb:
+    container_name: database
+    image: mongo:6-jammy
+    ports:
+      - '27017:27017'
+    volumes:
+      - dbdata6:/data/db
+
+  list_manager:
+    container_name: list_manager
+    build:
+      context: .
+      dockerfile: ./backend/list_manager/Dockerfile
+    environment:
+      - DB_HOST=mongodb://172.17.0.1:27017
+      - APP_DB=appDb
+      - MODEL_MANAGER_HOST=http://model_manager:8082
+      - NOTIFICATION_MANAGER_HOST=http://notification_manager:8083
+      - API_KEY=${API_KEY}
+    ports:
+      - '8080:8080'
+    volumes:
+      - ./backend/list_manager:/code/app
+
+  model_manager:
+    container_name: model_manager
+    build:
+      context: .
+      dockerfile: ./backend/model_manager/Dockerfile
+    environment:
+      - MODEL_FILES_DIR=model_files
+    ports:
+      - '8082:8082'
+    volumes:
+      - ./backend/model_manager:/code/app
+
+  notification_manager:
+    container_name: notification_manager
+    build:
+      context: .
+      dockerfile: ./backend/notification_manager/Dockerfile
+    environment:
+      - DB_HOST=mongodb://172.17.0.1:27017
+      - APP_DB=appDb
+    ports:
+      - '8083:8083'
+    volumes:
+      - ./backend/notification_manager:/code/app
+
+  ngrok:
+    container_name: ngrok
+    image: ngrok/ngrok:latest
+    environment:
+        NGROK_AUTHTOKEN: 2aQ1bWjFuBkZ9m0Xtgnj0bcvVoJ_3Jvz26156XsFWg2Xw5CsK
+    command: 'http --domain=fresh-cow-rightly.ngrok-free.app list_manager:8080'
+    ports:
+      - "4040:4040"
+volumes:
+  dbdata6:

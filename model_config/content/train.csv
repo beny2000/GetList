@@ -1,0 +1,572 @@
+,item,store_type
+0,Milk,supermarket
+1,Bread,bakery
+2,Toothpaste,drugstore
+3,Bananas,supermarket
+4,Sunglasses,clothing_store
+5,Hammer,hardware_store
+7,Shampoo,beauty_salon
+8,Pizza,convenience_store
+9,Candles,home_goods_store
+10,Screwdriver,hardware_store
+11,Socks,clothing_store
+12,Laptop,electronics_store
+13,Coffee,cafe
+14,Dog Food,pet_store
+15,Wine,liquor_store
+16,Car Battery,car_repair
+17,T-shirt,clothing_store
+18,Headphones,electronics_store
+19,Gasoline,gas_station
+20,Earrings,jewelry_store
+22,Flashlight,hardware_store
+23,Cupcakes,bakery
+24,Printer,electronics_store
+25,Running Shoes,shoe_store
+26,Apples,supermarket
+27,Dog Shampoo,pet_store
+28,Camera,electronics_store
+29,Couch,furniture_store
+31,Alarm Clock,department_store
+32,Umbrella,department_store
+34,Hair Dryer,hair_care
+35,Wallet,department_store
+36,Book,book_store
+38,Light Bulbs,home_goods_store
+39,Pasta,supermarket
+40,Phone Charger,electronics_store
+41,Fish Food,pet_store
+42,Backpack,department_store
+43,Towel,home_goods_store
+44,Ice Cream,convenience_store
+45,Car Wash Soap,car_wash
+46,Lotion,beauty_salon
+47,Juice,supermarket
+49,Laptop Bag,electronics_store
+50,Vase,florist
+51,Paint,home_goods_store
+52,Pet Bed,pet_store
+54,Candy,convenience_store
+55,DVD Player,electronics_store
+56,Sunscreen,drugstore
+57,Handbag,department_store
+58,Steak,supermarket
+59,Carrot,supermarket
+60,Running Shorts,clothing_store
+61,Razor,drugstore
+62,Yogurt,supermarket
+64,Lipstick,beauty_salon
+65,Flash Drive,electronics_store
+66,Chicken,supermarket
+68,Sandals,shoe_store
+69,Tea,supermarket
+70,Pillow,home_goods_store
+71,Screwdriver Set,hardware_store
+72,Movie DVD,electronics_store
+73,Cat Food,pet_store
+76,Grill,home_goods_store
+79,Laptop Stand,electronics_store
+80,BBQ Sauce,convenience_store
+82,Cologne,beauty_salon
+84,Air Freshener,convenience_store
+85,Printer Cable,electronics_store
+86,Baby Diapers,drugstore
+87,Alarm System,electronics_store
+91,Plunger,home_goods_store
+93,Running Hat,clothing_store
+94,Carrot Cake,bakery
+95,USB Hub,electronics_store
+97,Waffle Maker,home_goods_store
+98,Hiking Boots,shoe_store
+99,Toilet Paper,convenience_store
+101,Toothbrush,drugstore
+102,Cookie Mix,supermarket
+104,Curtains,home_goods_store
+106,Cat Litter,pet_store
+107,Bike Helmet,bicycle_store
+108,Dish Soap,supermarket
+109,Popcorn,convenience_store
+111,Gift Card,department_store
+112,Pasta Sauce,supermarket
+115,Diabetes Test Kit,drugstore
+116,Kettle,home_goods_store
+117,Desk Chair,furniture_store
+119,Plant,home_goods_store
+120,Wristwatch,jewelry_store
+121,Running Jacket,clothing_store
+122,Paper Towels,supermarket
+124,Sun Hat,clothing_store
+125,Bluetooth Speaker,electronics_store
+126,Dental Floss,drugstore
+128,Hand Mixer,home_goods_store
+130,Coffee Maker,home_goods_store
+132,Mirror,home_goods_store
+133,Swimsuit,clothing_store
+134,Hand Sanitizer,drugstore
+135,Dog Leash,pet_store
+136,Printer Scanner,electronics_store
+139,Backpack Cooler,department_store
+140,Soy Sauce,supermarket
+143,Toilet Bowl Cleaner,home_goods_store
+144,Wine Glasses,home_goods_store
+148,Hiking Backpack,department_store
+149,Smart Thermostat,electronics_store
+153,Bike Lock,bicycle_store
+156,Hair Clippers,beauty_salon
+158,Pet Toys,pet_store
+160,Electric Toothbrush,drugstore
+161,Sneakers,shoe_store
+162,Window Cleaner,home_goods_store
+163,Cooking Oil,supermarket
+164,Tennis Shorts,clothing_store
+165,Baby Wipes,supermarket
+167,HDMI Cable,electronics_store
+168,Bike Pump,bicycle_store
+170,Portable Charger,electronics_store
+171,Laptop Sleeve,electronics_store
+172,Gift Wrap,department_store
+173,Hair Straightener,beauty_salon
+177,Coffee Grinder,home_goods_store
+178,Pet Grooming Kit,pet_store
+179,Carpet Cleaner,home_goods_store
+181,Blender,home_goods_store
+182,Coffee Filters,supermarket
+183,milk,supermarket
+184,bread,bakery
+185,toothpaste,drugstore
+186,jeans,clothing_store
+187,coffee,cafe
+188,tire car,car_repair
+189,shampoo,beauty_salon
+190,screwdriver,hardware_store
+191,dog food,pet_store
+192,novel,book_store
+193,beer,liquor_store
+194,flower arrangement,florist
+195,laptop,electronics_store
+196,pizza,convenience_store
+197,gasoline,gas_station
+198,necklace,jewelry_store
+199,atm machine,atm
+200,cat litter,pet_store
+201,camera,electronics_store
+202,sunglasses,clothing_store
+203,orange juice,supermarket
+204,hammer,hardware_store
+205,wallet,department_store
+206,candle,home_goods_store
+207,sneakers,shoe_store
+208,cereal,supermarket
+209,rose flowers,florist
+210,notebook,book_store
+211,wine,liquor_store
+212,chocolate,convenience_store
+213,car battery,car_repair
+214,hair dryer,beauty_salon
+215,bed frame,furniture_store
+216,t-shirt,clothing_store
+217,gas can,gas_station
+218,phone case,electronics_store
+220,cheese,supermarket
+221,apple,supermarket
+222,soap,drugstore
+223,tuna can,convenience_store
+224,towel,home_goods_store
+227,puzzle,book_store
+228,ice cream,supermarket
+229,bike lock,bicycle_store
+230,lipstick,beauty_salon
+231,grill,home_goods_store
+234,pillow,home_goods_store
+235,printer,electronics_store
+237,wine glasses,home_goods_store
+238,flashlight,hardware_store
+240,soda,convenience_store
+241,sweater,clothing_store
+242,sunscreen,drugstore
+244,mirror,furniture_store
+246,laptop bag,electronics_store
+247,steak,supermarket
+248,vacuum cleaner,home_goods_store
+249,dog leash,pet_store
+250,cookie,convenience_store
+251,baby clothes,department_store
+252,tire bike,bicycle_store
+253,hat,clothing_store
+257,toilet paper,supermarket
+258,plunger,home_goods_store
+259,garden tools,hardware_store
+260,dog shampoo,pet_store
+261,shaving cream,drugstore
+262,yogurt,supermarket
+264,screwdriver set,hardware_store
+266,flash drive,electronics_store
+267,cat toy,pet_store
+268,diapers,supermarket
+270,nail polish,beauty_salon
+272,orange,supermarket
+273,wrench,hardware_store
+274,alarm clock,electronics_store
+275,baby formula,pharmacy
+276,backpack,department_store
+278,couch,furniture_store
+279,tea,supermarket
+280,paint brush,home_goods_store
+282,mouse,electronics_store
+283,luggage,department_store
+284,running shoes,shoe_store
+288,sweatshirt,clothing_store
+289,air freshener,convenience_store
+290,headphones,electronics_store
+293,printer cable,electronics_store
+294,coffee mug,home_goods_store
+295,toothbrush,drugstore
+296,garden hose,home_goods_store
+298,soap dispenser,home_goods_store
+299,baby wipes,supermarket
+303,picture frame,home_goods_store
+306,umbrella,department_store
+309,potato chips,convenience_store
+310,bicycle helmet,bicycle_store
+312,candles,home_goods_store
+317,cookie jar,home_goods_store
+318,tool set,hardware_store
+319,swimsuit,clothing_store
+320,bike pump,bicycle_store
+323,screwdriver kit,hardware_store
+325,paint,home_goods_store
+326,paper towels,supermarket
+327,toothpicks,convenience_store
+328,baby powder,drugstore
+330,plastic wrap,home_goods_store
+333,baby bottle,pharmacy
+334,baby shampoo,beauty_salon
+335,fire extinguisher,hardware_store
+336,alarm system,electronics_store
+338,hair brush,beauty_salon
+343,pet food,pet_store
+346,bath towels,home_goods_store
+348,sun hat,clothing_store
+349,carrot,supermarket
+353,tissue paper,supermarket
+354,bicycle lock,bicycle_store
+355,dog treats,pet_store
+356,pasta,supermarket
+358,baby wipes,drugstore
+359,bike chain,bicycle_store
+360,sweatpants,clothing_store
+372,lip balm,beauty_salon
+374,rice,supermarket
+375,bike basket,bicycle_store
+376,shoe polish,shoe_store
+377,cat food,pet_store
+381,hiking boots,shoe_store
+383,baby lotion,pharmacy
+387,cat treats,pet_store
+388,beach towel,home_goods_store
+389,puzzle book,book_store
+407,air freshener,home_goods_store
+410,granola bars,convenience_store
+415,coffee table,furniture_store
+416,dog collar,pet_store
+419,hair curler,beauty_salon
+420,blanket,home_goods_store
+425,bike light,bicycle_store
+426,sneakers,clothing_store
+428,perfume,beauty_salon
+431,artificial plant,home_goods_store
+434,canvas sneakers,clothing_store
+436,lawn mower,home_goods_store
+438,pasta sauce,supermarket
+442,printer scanner,electronics_store
+444,baby cot,furniture_store
+450,screw,hardware_store
+451,baby high chair,furniture_store
+452,photo frame,home_goods_store
+453,baby wipes,pharmacy
+459,bike bell,bicycle_store
+464,baby shampoo,pharmacy
+465,flash storage,electronics_store
+470,bike gloves,bicycle_store
+485,pet shampoo,pet_store
+488,sunscreen lotion,drugstore
+493,baby monitor,electronics_store
+497,bicycle light,bicycle_store
+582,spaghetti,supermarket
+583,pillow case,home_goods_store
+588,dog food bowl,pet_store
+590,hair trimmed,beauty_salon
+670,spaghetti sauce,supermarket
+671,bed sheets,home_goods_store
+672,photo album,book_store
+676,picture hangers,home_goods_store
+681,dental floss,drugstore
+683,dog bed,pet_store
+952,clock,electronics_store
+953,baby cereal,pharmacy
+954,suitcase,department_store
+956,pillow,furniture_store
+957,coffee,supermarket
+960,keyboard mouse combo,electronics_store
+961,briefcase,department_store
+962,walking shoes,shoe_store
+966,hoodie,clothing_store
+967,air purifier,home_goods_store
+968,wireless mouse,electronics_store
+971,usb cable,electronics_store
+972,travel mug,home_goods_store
+973,razor,drugstore
+975,portable fan,home_goods_store
+976,baby food,supermarket
+984,running shorts,clothing_store
+991,baby crib,furniture_store
+992,bluetooth speaker,electronics_store
+993,hair dye,beauty_salon
+994,desk lamp,home_goods_store
+995,shower curtain,home_goods_store
+996,baby diapers,pharmacy
+1001,dog brush,pet_store
+1003,bicycle bell,bicycle_store
+1004,towel set,home_goods_store
+1005,microwave popcorn,supermarket
+1006,tissue box,home_goods_store
+1007,baby lip balm,pharmacy
+1009,ziploc bags,home_goods_store
+1017,lounge chair,furniture_store
+1022,crib mattress,furniture_store
+1024,mascara,beauty_salon
+1025,headphones splitter,electronics_store
+1026,hair clip,beauty_salon
+1028,can opener,home_goods_store
+1112,grapefruit,supermarket
+1113,pliers,hardware_store
+1114,radio,electronics_store
+1115,baby pacifier,pharmacy
+1116,laptop bag,department_store
+1118,ottoman,furniture_store
+1119,green tea,supermarket
+1122,wireless keyboard,electronics_store
+1124,flip flops,shoe_store
+1128,scarf,clothing_store
+1130,bluetooth earbuds,electronics_store
+1133,ethernet cable,electronics_store
+1134,travel pillow,home_goods_store
+1137,portable charger,electronics_store
+1146,running tights,clothing_store
+1154,bluetooth earpiece,electronics_store
+1155,hair gel,beauty_salon
+1156,floor lamp,home_goods_store
+1157,shower mat,home_goods_store
+1163,dog toothbrush,pet_store
+1165,bicycle basket,bicycle_store
+1166,hand towel,home_goods_store
+1167,popcorn,supermarket
+1168,facial tissues,home_goods_store
+1177,wall clock,home_goods_store
+1178,ice cream cones,supermarket
+1179,recliner,furniture_store
+1183,medicine cabinet,home_goods_store
+1186,earphones case,electronics_store
+1187,hair roller,beauty_salon
+1188,emergency flashlight,hardware_store
+1190,bike horn,bicycle_store
+1205,pet brush,pet_store
+1207,luggage scale,department_store
+1208,after sun lotion,drugstore
+1213,baby sound machine,electronics_store
+1214,puzzle books,book_store
+1217,ski hat,clothing_store
+1218,picture frames,home_goods_store
+1225,dog toy,pet_store
+1266,watermelon,supermarket
+1267,tape measure,hardware_store
+1268,digital watch,electronics_store
+1269,baby teething gel,pharmacy
+1270,tote bag,department_store
+1272,office chair,furniture_store
+1273,green beans,supermarket
+1277,sunglasses case,department_store
+1280,coloring books,book_store
+1282,tie,clothing_store
+1283,essential oil diffuser,home_goods_store
+1284,power bank,electronics_store
+1287,usb flash drive,electronics_store
+1288,lunch box,home_goods_store
+1289,hand sanitizer,drugstore
+1291,portable power bank,electronics_store
+1292,baby formula,supermarket
+1294,robotic vacuum,home_goods_store
+1300,running shirt,clothing_store
+1308,wireless earbuds,electronics_store
+1309,hair spray,beauty_salon
+1310,table lamp,home_goods_store
+1325,plastic bags,home_goods_store
+1339,lip gloss,beauty_salon
+1363,eggs,supermarket
+1366,toilet paper,convenience_store
+1373,flowers,florist
+1384,gloves,department_store
+1386,lamp,home_goods_store
+1389,hair dryer,electronics_store
+1391,tyre,car_repair
+1397,deodorant,drugstore
+1404,bicycle,bicycle_store
+1411,lotion,beauty_salon
+1413,cookies,convenience_store
+1414,printer ink,electronics_store
+1416,candy,convenience_store
+1419,bike helmet,bicycle_store
+1421,watch,jewelry_store
+1424,paint,hardware_store
+1426,broom,home_goods_store
+1427,flashdrive,electronics_store
+1432,popcorn,convenience_store
+1434,cooking pot,home_goods_store
+1435,garden hose,hardware_store
+1436,scanner,electronics_store
+1438,dish soap,supermarket
+1439,sandals,shoe_store
+1447,salsa,convenience_store
+1448,rug,home_goods_store
+1451,mirror,home_goods_store
+1454,umbrella stand,home_goods_store
+1456,hair clippers,beauty_salon
+1459,baby shampoo,drugstore
+1460,oven mitts,home_goods_store
+1465,vitamins,pharmacy
+1466,back massager,electronics_store
+1467,gardening gloves,home_goods_store
+1469,tissues,convenience_store
+1471,spatula,home_goods_store
+1474,dish rack,home_goods_store
+1475,grape juice,supermarket
+1478,cookbook,book_store
+1479,flashlight batteries,hardware_store
+1481,peanut butter,supermarket
+1482,sunhat,clothing_store
+1557,wrapping paper,department_store
+1559,sleeping pillows,home_goods_store
+1560,extension cord,hardware_store
+1561,face cream,beauty_salon
+1566,frying pan,home_goods_store
+1568,catnip,pet_store
+1570,sweater vest,clothing_store
+1571,frozen vegetables,supermarket
+1575,umbrella,home_goods_store
+1577,dishwasher detergent,home_goods_store
+1578,tablecloth,home_goods_store
+1579,bug spray,drugstore
+1580,lightbulbs,hardware_store
+1583,pancake mix,supermarket
+1585,hammock,home_goods_store
+1589,instant noodles,convenience_store
+1593,sunflower seeds,convenience_store
+1594,tupperware,home_goods_store
+1596,toothbrush holder,home_goods_store
+1597,sunblock,drugstore
+1601,kitchen timer,home_goods_store
+1602,hand warmer,hardware_store
+1605,dish cloth,home_goods_store
+1606,vase,home_goods_store
+1609,ski gloves,department_store
+1610,potato peeler,home_goods_store
+1614,snorkel,home_goods_store
+1615,baby oil,drugstore
+1616,ironing board,home_goods_store
+1619,back support belt,drugstore
+1620,mop,home_goods_store
+1624,garbage bags,home_goods_store
+1627,safety pins,department_store
+1628,pickle jar,supermarket
+1629,bamboo cutting board,home_goods_store
+1630,grill brush,home_goods_store
+1632,batteries,electronics_store
+1633,baby clothes,clothing_store
+1634,potpourri,home_goods_store
+1635,oven gloves,home_goods_store
+1637,sleep mask,home_goods_store
+1638,coffee table,home_goods_store
+1639,flower vase,home_goods_store
+1641,tart pan,home_goods_store
+1642,trivet,home_goods_store
+1643,bar stool,home_goods_store
+1644,lint roller,home_goods_store
+1645,corn cob holders,home_goods_store
+1646,corn broom,home_goods_store
+1647,cotton balls,drugstore
+1648,kitchen scale,home_goods_store
+1649,paint brushes,hardware_store
+1652,backpack,home_goods_store
+1654,bookshelf,furniture_store
+1655,baby gate,department_store
+1657,bicycle pump,bicycle_store
+1659,tweezers,beauty_salon
+1660,baby socks,clothing_store
+1661,shower gel,drugstore
+1662,ice cube tray,home_goods_store
+1663,taco shell holder,home_goods_store
+1664,camera tripod,electronics_store
+1665,hair straightener,beauty_salon
+1667,water filter,home_goods_store
+1668,laptop stand,electronics_store
+1669,bento box,home_goods_store
+1670,scented candles,home_goods_store
+1672,cooking oil,supermarket
+1675,rolling pin,home_goods_store
+1676,cat brush,pet_store
+1678,mosquito repellent,drugstore
+1679,cookie cutter,home_goods_store
+1680,food storage containers,home_goods_store
+1683,paper shredder,electronics_store
+1684,hiking map,book_store
+1685,dish drainer,home_goods_store
+1686,pajamas,clothing_store
+1687,toilet bowl brush,home_goods_store
+1689,tongs,home_goods_store
+1690,alarm clock,home_goods_store
+1693,pepper grinder,home_goods_store
+1694,bread box,home_goods_store
+1695,cooking sheet,home_goods_store
+1697,massage oil,beauty_salon
+1698,popcorn maker,home_goods_store
+1699,sunflower oil,supermarket
+1700,cake stand,home_goods_store
+1704,toothpick holder,home_goods_store
+1706,baby blanket,home_goods_store
+1707,cat scratcher,pet_store
+1709,gaming mouse,electronics_store
+1711,bread knife,home_goods_store
+1713,cotton swabs,drugstore
+1714,bedsheets,home_goods_store
+1716,gardening tools,home_goods_store
+1719,coffee filter,home_goods_store
+1721,cork screw,home_goods_store
+1722,dental pick,drugstore
+1724,raincoat,clothing_store
+1725,teapot,home_goods_store
+1726,wine opener,home_goods_store
+1727,serving tray,home_goods_store
+1728,blow dryer,beauty_salon
+1729,hair rollers,beauty_salon
+1730,pet food bowls,pet_store
+1733,fruit basket,home_goods_store
+1734,barbecue sauce,supermarket
+1735,nail clippers,beauty_salon
+1737,clothes hanger,home_goods_store
+1738,pet toy,pet_store
+1739,hot sauce,supermarket
+1740,kitchen gadget,home_goods_store
+1741,dog bowl,pet_store
+1744,shower caddy,home_goods_store
+1746,handheld mirror,beauty_salon
+1749,baby diapers,supermarket
+1750,spice rack,home_goods_store
+1752,back scrubber,beauty_salon
+1753,sippy cup,supermarket
+1754,oven mitt,home_goods_store
+1757,drawer organizer,home_goods_store
+1758,couch pillow,home_goods_store
+1761,tissues,supermarket
+1765,kitchen tongs,home_goods_store
+1766,baby clothes,supermarket
+1775,sleeping mask,home_goods_store
