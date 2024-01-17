@@ -12,15 +12,7 @@ logging.basicConfig(
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
 
-try:
-   extracted_folder_path = f"{os.environ.get('MODEL_FILES_DIR')}"
-except Exception as ex:
-    logging.error(f"Error: Missing environment variable. {ex}")
-    raise ex 
-
-model_path = f"{extracted_folder_path}/model"
-tokenizer_path = f"{extracted_folder_path}/tokenizer"
-labels_filepath = f"{extracted_folder_path}/label_mapping.json"
+labels_filepath = f"label_mapping.json"
 
 app = FastAPI()
 app.add_middleware(
@@ -36,12 +28,15 @@ try:
     with open(labels_filepath, 'r') as labels:
         label_mapping = json.load(labels)  
 
-    model = AutoModelForSequenceClassification.from_pretrained(model_path)
-    tokenizer = AutoTokenizer.from_pretrained(tokenizer_path)
+    model = AutoModelForSequenceClassification.from_pretrained("beny2000/store_type_classifyer")
+    tokenizer = AutoTokenizer.from_pretrained("beny2000/store_type_classifyer")
     model.eval()
+    logging.info(f"Model initialized")
 except Exception as ex:
-    logging.error(f"Error: Failed to initialize model, tokenizer and labels. {e}")
+    logging.error(f"Error: Failed to initialize model, tokenizer and labels. {ex}")
     raise ex
+
+
 
 @app.get("/", include_in_schema=False)
 def root():
