@@ -1,5 +1,7 @@
 FROM python:3.9
 
+LABEL org.opencontainers.image.source https://github.com/beny2000/GetList
+
 WORKDIR /code
 
 COPY ./backend/list_manager/requirements.txt /code/requirements.txt
