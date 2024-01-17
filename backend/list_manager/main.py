@@ -215,6 +215,7 @@ async def load_locations(geo_location: Location):
 
    data = response.json()
    docs = []
+   logging.info(f"Found {len(data['results'])} locations {data}")
    for doc in data["results"]:
       docs.append({
          "types": doc["types"],
