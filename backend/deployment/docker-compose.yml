@@ -1,0 +1,41 @@
+version: '3.8'
+services:
+  mongodb:
+    container_name: database
+    image: mongo:6-jammy
+    ports:
+      - '27017:27017'
+    volumes:
+      - dbdata6:/data/db
+
+  list_manager:
+    container_name: list_manager
+    image: ghcr.io/beny2000/list_manager:latest
+    environment:
+      - DB_HOST=mongodb://172.17.0.1:27017
+      - APP_DB=appDb
+      - MODEL_MANAGER_HOST=http://model_manager:8082
+      - NOTIFICATION_MANAGER_HOST=http://notification_manager:8083
+      - API_KEY=${API_KEY}
+    ports:
+      - 8080:8080
+
+  notification_manager:
+    container_name: notification_manager
+    image: ghcr.io/beny2000/notification_manager:latest
+    environment:
+      - DB_HOST=mongodb://172.17.0.1:27017
+      - APP_DB=appDb
+    ports:
+      - 8083:8083
+
+  model_manager:
+    container_name: model_manager
+    image: ghcr.io/beny2000/model_manager:latest
+    environment:
+      - MODEL_FILES_DIR=model_files
+    ports:
+      - 8082:8082
+
+volumes:
+  dbdata6:
