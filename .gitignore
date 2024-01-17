@@ -40,4 +40,4 @@ frontend/yarn-error.*
 *.pyc
 
 # models
-*.tar.gz
+lib*.tar.gz

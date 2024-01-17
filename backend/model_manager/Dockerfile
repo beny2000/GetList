@@ -12,7 +12,7 @@ COPY ./backend/model_0.69.tar.gz /code/model_0.69.tar.gz
 
 RUN mkdir /code/model_files
 
-RUN tar -xzvf /code/model_0.69.tar.gz -C /code/model_files
+RUN tar -xzvf model_0.69.tar.gz -C /code/model_files
 
 COPY ./backend/model_manager /code/app
 
