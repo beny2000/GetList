@@ -24,7 +24,7 @@ Frontend Technologies: JavaScript, React Native, Expo
 
 API Integration: Google Places API
 
-Machine Learning: BERT (Bidirectional Encoder Representations from Transformers)
+Machine Learning: BERT (Bidirectional Encoder Representations from Transformers), Huggingface
 
 Database: MongoDB with Geospatial Search
 
@@ -32,7 +32,7 @@ DevOps: Docker for containerization
 
 ## Getting Started
 To run the app locally, you'll need to start the backend and frontend respectively
-1. Clone the repo ``
+1. Clone the repo `git clone https://github.com/beny2000/GetList.git`
 
 ### Starting the backend
 1. In the `docker-compose.yml` input your `NGROK_AUTHTOKEN` and `--domain` from [ngrok](https://ngrok.com/)
