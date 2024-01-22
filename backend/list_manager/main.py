@@ -12,7 +12,7 @@ logging.basicConfig(
     level=logging.DEBUG,
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
-print(os.environ.get('MODEL_MANAGER_HOST'))
+
 try:
     db = DatabaseInterface(os.environ.get('DB_HOST'), os.environ.get('APP_DB'))
     # "http://model_manager:8082/api/tag_item"
@@ -209,29 +209,11 @@ async def load_locations(geo_location: Location):
    Returns:
    - **str**: "OK" if successful.
    """
-   url = f"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={geo_location.latitude}%2C{geo_location.longitude}&type=store&key={places_api_key}&rankby=distance"
+   try:
+      db.load_locations(geo_location.latitude, geo_location.longitude)
+      return "OK"
+   except Exception as e:
+      logging.error(f"Error load_locations failed. {e}")
+      raise HTTPException(status_code=500, detail="Server error")
 
-   response = requests.request("GET", url)
-
-   data = response.json()
-   docs = []
-   logging.info(f"Found {len(data['results'])} locations {data}")
-   for doc in data["results"]:
-      docs.append({
-         "types": doc["types"],
-         "name": doc["name"],
-         "vicinity": doc["vicinity"],
-         "placeId": doc["place_id"],
-         "location": {
-               "type": "Point",
-               "coordinates": [
-                  doc["geometry"]["location"]["lat"],
-                  doc["geometry"]["location"]["lng"]
-               ]
-         }
-      })
-
-   db.insert_many("locations", docs)
-   db.get_database()["locations"].create_index([("location", "2dsphere")])
-
-   return "OK"
+   

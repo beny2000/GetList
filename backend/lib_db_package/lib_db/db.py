@@ -1,11 +1,15 @@
 import logging
 import pymongo
-
+import requests
+import os
 
 logging.basicConfig(
     level=logging.DEBUG,
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
+
+places_api_key = os.environ.get('API_KEY', "")
+
 
 
 class DatabaseInterface:
@@ -102,7 +106,7 @@ class DatabaseInterface:
             result = collection.insert_many(documents)
             return result.inserted_ids
         except Exception as e:
-            logging.error(f"Error finsert many failed. {e}")
+            logging.error(f"Error insert many failed. {e}")
             return None
 
     def update_one(self, collection_name: str, filter_criteria: dict, update: dict):
@@ -243,6 +247,16 @@ class DatabaseInterface:
 
             docs = list(collection.find(query))
 
+            if len(docs) == 0:
+                logging.info("Found no nearby locations, checking if new locations should be loaded")
+                query["location"]["$near"]["$maxDistance"] = 3000
+                locs = list(collection.find(query))
+
+                if len(locs) == 0:
+                    logging.info("Loading new locations from Places API")
+                    self.load_locations(reference_location[0], reference_location[1])
+                    docs = list(collection.find(query))
+
             for doc in docs:
                 doc["id"] = str(doc["_id"])
                 del doc["_id"]
@@ -300,4 +314,81 @@ class DatabaseInterface:
             return list(combined_items.values())
         except Exception as e:
             logging.error(f"Error find_nearby_items failed. {e}")
+            return None
+
+    
+    def load_locations(self, latitude: str, longitude: str):
+        """
+        Load locations based on the provided geo-location.
+
+        Parameters:
+        - **geo_location** Location object containing latitude and longitude.
+
+        Returns:
+        - **str**: "OK" if successful.
+        """
+        try:
+            url = f"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={latitude}%2C{longitude}&type=store&radius=50000&key={places_api_key}"
+
+            response = requests.request("GET", url)
+            store_types = [
+                "atm",
+                "bakery",
+                "bank",
+                "bar",
+                "beauty_salon",
+                "bicycle_store",
+                "book_store",
+                "cafe",
+                "car_rental",
+                "car_repair",
+                "car_wash",
+                "clothing_store",
+                "convenience_store",
+                "department_store",
+                "drugstore",
+                "electronics_store",
+                "florist",
+                "furniture_store",
+                "gas_station",
+                "hair_care",
+                "hardware_store",
+                "home_goods_store",
+                "jewelry_store",
+                "liquor_store",
+                "pet_store",
+                "pharmacy",
+                "shoe_store",
+                "shopping_mall",
+                "store",
+                "grocery_or_supermarket"
+            ]
+            data = response.json()
+            docs = []
+
+            for doc in data["results"]:
+                if any(value in store_types for value in doc["types"]):
+                    docs.append({
+                        "types": doc["types"],
+                        "name": doc["name"],
+                        "vicinity": doc["vicinity"],
+                        "placeId": doc["place_id"],
+                        "location": {
+                            "type": "Point",
+                            "coordinates": [
+                                doc["geometry"]["location"]["lat"],
+                                doc["geometry"]["location"]["lng"]
+                            ]
+                        }
+                    })
+
+            logging.info(f"Found {len(data['results'])} inserted {len(docs)}")
+
+            if len(docs) > 0:
+                self.insert_many("locations", docs)
+                self.database["locations"].create_index([("location", "2dsphere")])
+            return len(docs)
+        
+        except Exception as e:
+            logging.error(f"Error load_locations failed. {e}")
             return None
