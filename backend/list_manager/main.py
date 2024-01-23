@@ -7,6 +7,11 @@ from fastapi.responses import RedirectResponse
 from fastapi.middleware.cors import CORSMiddleware
 from lib_db import DatabaseInterface
 from .models import GeoLocation, EditListItem, SearchNearby, Location
+import google.cloud.logging
+
+# Instantiates a client
+client = google.cloud.logging.Client()
+client.setup_logging()
 
 logging.basicConfig(
     level=logging.DEBUG,
