@@ -48,7 +48,7 @@ class DatabaseInterface:
             collection = self.database[collection_name]
             document = collection.find_one(filter_criteria)
 
-            if not document:
+            if document:
                 document["id"] = str(document["_id"])
                 del document["_id"]
 
@@ -287,7 +287,7 @@ class DatabaseInterface:
 
             for item in user_list["items"]:
                 for location in locations:
-                    if item["tag"] in location["types"]:
+                    if location["types"][0] in item["tag"]:
                         items_found.append(
                             {"item": item["item"], "store": location["name"],
                                 "id": item["id"], "location": {

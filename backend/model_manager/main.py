@@ -61,11 +61,11 @@ async def get_list(item: str):
 
         # Get the predicted label
         predicted_label = torch.argmax(outputs.logits, dim=1).item()
-        predicted_tag = label_mapping[str(predicted_label)]
+        #predicted_tag = label_mapping[str(predicted_label)]
 
-        print(f"Top labels: {[label_mapping[str(i)] for i in torch.topk(outputs.logits, k=3, dim=1)[1].squeeze().tolist()]}")
+        #print(f"Top labels: {[label_mapping[str(i)] for i in torch.topk(outputs.logits, k=3, dim=1)[1].squeeze().tolist()]}")
         
-        return predicted_tag
+        return [label_mapping[str(i)] for i in torch.topk(outputs.logits, k=3, dim=1)[1].squeeze().tolist()]
     except Exception as e:
         logging.error(f"Error: Failed to tag item. {e}")
         raise HTTPException(status_code=500, detail="Server error") from e

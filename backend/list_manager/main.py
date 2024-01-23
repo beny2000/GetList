@@ -141,14 +141,19 @@ async def add_list_item(item: EditListItem):
    """
    
    try:
-      tag = requests.get(f"{model_manager_url}?item={item.item}").json()
+      tags = requests.get(f"{model_manager_url}?item={item.item}").json()
 
-      if "grocery" in tag or "supermarket" in tag:
-         tag = "grocery_or_supermarket"
+      if isinstance(tags, list):
+         for i in range(len(tags)):
+            if "grocery" in tags[i] or "supermarket" in tags[i]:
+               tags[i] = "grocery_or_supermarket"
+      else:
+         if "grocery" in tags or "supermarket" in tags:
+               tags = "grocery_or_supermarket"
 
       db.push_to_items_list('lists', item.list_id, {
          "item": item.item,
-         "tag": tag,
+         "tag": tags,
          "id": str(abs(hash(item.item)))})
       return "OK"
    except Exception as e:
