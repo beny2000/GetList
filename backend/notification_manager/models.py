@@ -9,5 +9,5 @@ class GeoLocation(BaseModel):
 class SearchNearby(BaseModel):
     location: GeoLocation
     list_id: str
-    radius: int = 10000
+    radius: int = 200
     token: str

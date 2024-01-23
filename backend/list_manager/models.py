@@ -33,7 +33,7 @@ class SearchNearby(BaseModel):
     """
     location: Location
     list_id: str
-    radius: int = 10000
+    radius: int = 200
 
 class GeoLocation(BaseModel):
     """
