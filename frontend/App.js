@@ -45,13 +45,13 @@ TaskManager.defineTask(LOCATION_TASK_NAME, async ({ data, error }) => {
     });
 
     await axios.post(
-      `https://fresh-cow-rightly.ngrok-free.app/api/geolocation`,
+      `https://www.get-list.com/api/geolocation`,
       {
         location: {
           latitude: locations[0].coords.latitude.toString(),
           longitude: locations[0].coords.longitude.toString(),
         },
-        radius: 10000,
+        radius: 200,
         token: token.data,
         list_id: DEV_LIST_ID,
       }, { headers: { "ngrok-skip-browser-warning": "69420" } }
@@ -104,11 +104,6 @@ async function registerForPushNotificationsAsync() {
       projectId: Constants.expoConfig.extra.eas.projectId,
     });
     console.log("TOKEN", token.data);
-  } else {
-    //alert('Must use physical device for Push Notifications');
-    token = await Notifications.getExpoPushTokenAsync({
-      projectId: Constants.expoConfig.extra.eas.projectId,
-    });
   }
 
   return token.data;
@@ -124,7 +119,7 @@ const App = () => {
   React.useEffect(() => {
     const createList = async () => {
       await axios.get(
-        `https://fresh-cow-rightly.ngrok-free.app/api/create_list?list_id=${DEV_LIST_ID}`,
+        `https://www.get-list.com/api/create_list?list_id=${DEV_LIST_ID}`,
         { headers: { "ngrok-skip-browser-warning": "69420" } }
       );
     }

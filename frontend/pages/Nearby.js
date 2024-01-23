@@ -29,7 +29,7 @@ const Nearby = ({ navigation }) => {
   const getNearbyItems = async (location) => {
     try {
       const response = await axios.post(
-        `https://fresh-cow-rightly.ngrok-free.app/api/items_nearby`,
+        `https://www.get-list.com/api/items_nearby`,
         { list_id: DEV_LIST_ID, location: location },
         { headers: { "ngrok-skip-browser-warning": "69420" } }
       );

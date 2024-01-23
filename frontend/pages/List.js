@@ -25,7 +25,7 @@ const ItemList = ({ navigation }) => {
   const fetchData = async (id) => {
     try {
       const response = await axios.get(
-        `https://fresh-cow-rightly.ngrok-free.app/api/get_list?list_id=${DEV_LIST_ID}`,
+        `https://www.get-list.com/api/get_list?list_id=${DEV_LIST_ID}`,
         { headers: { "ngrok-skip-browser-warning": "69420" } }
       );
 
@@ -42,7 +42,7 @@ const ItemList = ({ navigation }) => {
   const removeItem = async (item) => {
     try {
       await axios.post(
-        `https://fresh-cow-rightly.ngrok-free.app/api/remove_list_item`,
+        `https://www.get-list.com/api/remove_list_item`,
         { list_id: DEV_LIST_ID, item: item.item },
         { headers: { "ngrok-skip-browser-warning": "69420" } }
       );
@@ -61,7 +61,7 @@ const ItemList = ({ navigation }) => {
     if (!newItem == "") {
       try {
         await axios.post(
-          `https://fresh-cow-rightly.ngrok-free.app/api/add_list_item`,
+          `https://www.get-list.com/api/add_list_item`,
           { list_id: DEV_LIST_ID, item: newItem },
           { headers: { "ngrok-skip-browser-warning": "69420" } }
         );
@@ -84,7 +84,7 @@ const ItemList = ({ navigation }) => {
     if (!item.item == "") {
       try {
         await axios.post(
-          `https://fresh-cow-rightly.ngrok-free.app/api/update_list_item`,
+          `https://www.get-list.com/api/update_list_item`,
           { list_id: DEV_LIST_ID, item: item.item, id: item.id },
           { headers: { "ngrok-skip-browser-warning": "69420" } }
         );
