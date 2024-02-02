@@ -6,7 +6,7 @@ import Nearby from "./pages/Nearby";
 import * as Notifications from "expo-notifications";
 import * as Location from "expo-location";
 import { Platform, StyleSheet, Button, Text } from "react-native";
-import axios from "axios";
+import { api } from "./helpers/api";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import * as TaskManager from "expo-task-manager";
 import theme from "./components/Theme";
@@ -44,17 +44,15 @@ TaskManager.defineTask(LOCATION_TASK_NAME, async ({ data, error }) => {
       projectId: Constants.expoConfig.extra.eas.projectId,
     });
 
-    await axios.post(
-      `https://www.get-list.com/api/geolocation`,
+    await api.geoLocation(
       {
         location: {
           latitude: locations[0].coords.latitude.toString(),
           longitude: locations[0].coords.longitude.toString(),
         },
-        radius: 200,
+        radius: 100,
         token: token.data,
-        list_id: DEV_LIST_ID,
-      }, { headers: { "ngrok-skip-browser-warning": "69420" } }
+      }
     );
   }
 });
@@ -118,10 +116,7 @@ const App = () => {
 
   React.useEffect(() => {
     const createList = async () => {
-      await axios.get(
-        `https://www.get-list.com/api/create_list?list_id=${DEV_LIST_ID}`,
-        { headers: { "ngrok-skip-browser-warning": "69420" } }
-      );
+     await api.createList();
     }
     createList();
   }, []);

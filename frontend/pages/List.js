@@ -14,6 +14,7 @@ import theme from "../components/Theme";
 import Swipe from "../components/Swipe";
 import Constants from "expo-constants";
 import { base64Encode } from "../helpers/encoder";
+import { api } from "../helpers/api";
 
 const DEV_LIST_ID = base64Encode(Constants.deviceName);
 
@@ -24,12 +25,9 @@ const ItemList = ({ navigation }) => {
 
   const fetchData = async (id) => {
     try {
-      const response = await axios.get(
-        `https://www.get-list.com/api/get_list?list_id=${DEV_LIST_ID}`,
-        { headers: { "ngrok-skip-browser-warning": "69420" } }
-      );
+      const response = await api.getList();
 
-      const items = response.data[0].items.map((item) => ({
+      const items = response[0].items.map((item) => ({
         id: item.id,
         item: item.item,
       }));
@@ -41,10 +39,8 @@ const ItemList = ({ navigation }) => {
 
   const removeItem = async (item) => {
     try {
-      await axios.post(
-        `https://www.get-list.com/api/remove_list_item`,
-        { list_id: DEV_LIST_ID, item: item.item },
-        { headers: { "ngrok-skip-browser-warning": "69420" } }
+      api.removeListItem(
+        { item: item.item },
       );
 
       setItems((prevItems) =>
@@ -60,16 +56,14 @@ const ItemList = ({ navigation }) => {
   const addItem = async () => {
     if (!newItem == "") {
       try {
-        await axios.post(
-          `https://www.get-list.com/api/add_list_item`,
-          { list_id: DEV_LIST_ID, item: newItem },
-          { headers: { "ngrok-skip-browser-warning": "69420" } }
+        api.addListItem(
+          { item: newItem },
         );
         setItems((prev) => [
           ...prev,
           {
             item: newItem,
-            id: Math.floor(Math.random() * 90) + 100,
+            id: base64Encode(newItem)
           },
         ]);
         fetchData();
@@ -83,10 +77,8 @@ const ItemList = ({ navigation }) => {
   const updateItem = async (item) => {
     if (!item.item == "") {
       try {
-        await axios.post(
-          `https://www.get-list.com/api/update_list_item`,
-          { list_id: DEV_LIST_ID, item: item.item, id: item.id },
-          { headers: { "ngrok-skip-browser-warning": "69420" } }
+        api.updateListItem(
+          { item: item.item, id: item.id },
         );
         fetchData();
       } catch (error) {

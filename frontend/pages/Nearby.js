@@ -16,10 +16,8 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import theme from "../components/Theme";
 import Swipe from "../components/Swipe";
 import openInMaps from "../helpers/openInMaps";
-import Constants from "expo-constants";
-import { base64Encode } from "../helpers/encoder";
+import { api } from "../helpers/api";
 
-const DEV_LIST_ID = base64Encode(Constants.deviceName)
 
 const Nearby = ({ navigation }) => {
   const [location, setLocation] = useState(null);
@@ -28,15 +26,13 @@ const Nearby = ({ navigation }) => {
 
   const getNearbyItems = async (location) => {
     try {
-      const response = await axios.post(
-        `https://www.get-list.com/api/items_nearby`,
-        { list_id: DEV_LIST_ID, location: location },
-        { headers: { "ngrok-skip-browser-warning": "69420" } }
+      const response = await api.itemsNearby(
+        { location: location, radius: 1000 },
       );
 
       // Merge items from API with existing items maintaining there options state
       setItems((prev) =>
-        response?.data?.map((ele) => {
+        response?.map((ele) => {
           const index = prev?.findIndex((prevEle) => prevEle.id === ele.id);
           return index !== -1
             ? prev[index]
