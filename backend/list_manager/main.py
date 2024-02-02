@@ -3,7 +3,8 @@ import os
 import logging
 import requests
 from fastapi import FastAPI, HTTPException, Depends, status
-from fastapi.responses import RedirectResponse
+from fastapi.responses import HTMLResponse
+from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.security import OAuth2PasswordBearer
 from lib_db import DatabaseInterface
@@ -63,11 +64,14 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
+print(os.getcwd())
+app.mount("/code/app/static", StaticFiles(directory="/code/app/static"), name="/code/app/static")
 
 @app.get("/", include_in_schema=False)
 def root():
-    return RedirectResponse(url='/docs')
+    with open("/code/app/static/index.html", "r", encoding="utf-8") as file:
+        html_content = file.read()
+    return HTMLResponse(content=html_content)
 
 @app.get("/api/token")
 async def generate_token(client_id: str):
