@@ -15,6 +15,7 @@ import Constants from "expo-constants";
 import { base64Encode } from "./helpers/encoder";
 
 
+
 const DEV_LIST_ID = base64Encode(Constants.deviceName);
 const LOCATION_TASK_NAME = "background-location-task";
 const Tab = createBottomTabNavigator();
