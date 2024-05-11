@@ -9,13 +9,9 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.security import OAuth2PasswordBearer
 from lib_db import DatabaseInterface
 from .models import GeoLocation, EditListItem, SearchNearby, Location
-import google.cloud.logging
 from datetime import datetime, timedelta
 from jose import jwt
 
-# Instantiates a client
-client = google.cloud.logging.Client()
-client.setup_logging()
 
 logging.basicConfig(
     level=logging.DEBUG,
